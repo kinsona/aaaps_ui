@@ -38,7 +38,7 @@ function store_user_location() {
     	// send lat and long to initialstate in a map mode
 		$.get(
 		    "https://groker.initialstate.com/api/events?accessKey=hQ7dT9fyPrTcbgu5pzTjcROozeuuRnnc&bucketKey=9BARX6QRUQRA",
-		    {Map : position.coords.latitude+','+position.coords.longitude},
+		    {Map:position.coords.latitude+','+position.coords.longitude},
 		    function(data) {
 		       // alert('page content: ' + data);
 		       console.log('data posted to initialstate');
@@ -117,11 +117,23 @@ function store_user_location() {
     	function getMovement() {
     		// pick a random activity to do
     		// options: sitting, yoga, running
+    		var activities = ['sitting','yoga', 'running', 'dancing'];
+			var randomNumber = Math.floor(Math.random()*activities.length);
 
-
-    		return "sitting";
+    		return activities[randomNumber];
     	}
-    	// code...
+    	var currentActivity = getMovement();
+    	
+
+    	// send to initialstate the activity
+		$.get(
+			"https://groker.initialstate.com/api/events?accessKey=hQ7dT9fyPrTcbgu5pzTjcROozeuuRnnc&bucketKey=9BARX6QRUQRA",
+			{CurrentActivity:currentActivity},
+			function(data) {
+			   // alert('page content: ' + data);
+			   console.log('data posted to initialstate');
+			}
+		);
 
     }
     getLocation();
@@ -132,38 +144,3 @@ setInterval(function() {
 }, 10000);
 
 
-// accelerometer
-// code...
-
-console.log('hi from passive data collector');
-
-
-
-//////////
-
-// var request = new XMLHttpRequest();
-
-// request.open('POST', 'https://groker.initialstate.com/api/events');
-
-// request.setRequestHeader('Content-Type', 'application/json');
-// request.setRequestHeader('X-IS-AccessKey', 'hQ7dT9fyPrTcbgu5pzTjcROozeuuRnnc');
-// request.setRequestHeader('X-IS-BucketKey', '9BARX6QRUQRA');
-// request.setRequestHeader('Accept-Version', '~0');
-
-// request.onreadystatechange = function () {
-//   if (this.readyState === 4) {
-//     console.log('Status:', this.status);
-//     console.log('Headers:', this.getAllResponseHeaders());
-//     console.log('Body:', this.responseText);
-//   }
-// };
-
-// var body = [
-//   {
-//     'key': 'temperature',
-//     'value': '1',
-//     'epoch': 1419876021.778477
-//   }
-// ];
-
-// request.send(JSON.stringify(body));

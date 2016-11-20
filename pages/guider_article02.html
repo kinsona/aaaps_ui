@@ -21,15 +21,39 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="https://fonts.googleapis.com/css?family=Oleo+Script:700" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    <![endif]-->
+
+    <!-- Connect to Here API -->
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" 
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" 
+    type="text/javascript" charset="utf-8"></script>
+
+    <!-- google Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:700" rel="stylesheet">
+
+    <style type="text/css">
+    #page-wrapper{
+        background: #D1913C; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #D1913C , #FFD194); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #D1913C , #FFD194); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+.myTopics{
+       font-family: 'Oleo Script', cursive;
+    }
+
+.myContent{
+    font-family: 'Open Sans', sans-serif;
+}
+    </style>
+</head>
     <body>
         <div id="wrapper">
             <!-- Navigation -->
@@ -395,44 +419,13 @@
         <!-- Custom Theme JavaScript -->
         <script src="../dist/js/sb-admin-2.js"></script>
 
+                <!-- Setup Navbar -->
+        <script src="../js/nav-bar.js"></script>
+
+        <!-- Capture Passive Data -->
+        <script src="../js/passive_data_collector.js"></script>
+
     </body>
 
-    <script type="text/javascript">
 
-// HIDE ALL NOT NEEDED NAVBAR ELEMENTS
-
-// get rid of extra second nav bar
-$('.nav.navbar-top-links.navbar-right').hide();
-
-
-// TODO: rewrite with a foreach loop
-// TODO: re-phrase nav links user friendly
-// reduce to only required enu items/features
-$('#side-menu > .sidebar-search').hide();
-$('#side-menu > li:nth-child(-n+8)').hide(); // kill dashboard plus everything else
-
-// add all feature links
-$('#side-menu').append('<li><a href="index.html"><i class="fa fa-female" aria-hidden="true"></i>Guider</a></li>'); // guider
-
-$('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Product Recommender</a></li>'); // product recommender
-
-// TODO: calender, purchaser
-$('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Calender</a></li>'); // calender
-$('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Purchaser</a></li>'); // purchaser
-// code...
-</script>
-<style type="text/css">
-#page-wrapper{
-    background: #BA5370; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #BA5370 , #F4E2D8); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #BA5370 , #F4E2D8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.myTopics{
-       font-family: 'Oleo Script', cursive;
-    }
-
-.myContent{
-    font-family: 'Open Sans', sans-serif;
-}
-</style>
 </html>

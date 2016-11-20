@@ -30,6 +30,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Connect to Here API -->
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" 
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" 
+    type="text/javascript" charset="utf-8"></script>
+
+
 </head>
 
 
@@ -391,9 +398,9 @@
                         <!-- TODO: get some real questions -->
                         <form role="form">
                             <!-- question 1 -->
-                            <fieldset>
+                            <fieldset disable>
                                 <div class="form-group">
-                                    <input class="form-control" id="question1" type="text" placeholder="How old are you?">
+                                    <input class="form-control" id="question1" type="text" placeholder="How old are you?" disabled>
                                 </div>
                             </fieldset>
                             <div class="form-group">

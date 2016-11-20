@@ -46,42 +46,6 @@ function store_user_location() {
 		);
 
 
-
-		// var request = new XMLHttpRequest();
-
-		// request.open('POST', 'https://groker.initialstate.com/api/events');
-
-		// request.setRequestHeader('Content-Type', 'application/json');
-		// request.setRequestHeader('X-IS-AccessKey', 'hQ7dT9fyPrTcbgu5pzTjcROozeuuRnnc');
-		// request.setRequestHeader('X-IS-BucketKey', '9BARX6QRUQRA');
-		// request.setRequestHeader('Accept-Version', '~0');
-
-		// request.onreadystatechange = function () {
-		//   if (this.readyState === 4) {
-		//     console.log('Status:', this.status);
-		//     console.log('Headers:', this.getAllResponseHeaders());
-		//     console.log('Body:', this.responseText);
-		//   }
-		// };
-
-		// var body = [
-		//   {
-		//     'key': 'temperature',
-		//     'value': '1',
-		//     'epoch': 1419876021.778477
-		//   }
-		// ];
-
-		// request.send(JSON.stringify(body));
-
-
-
-
-
-
-    	// code...
-
-
     	// improve position data
     	// send data to be stored to initialstate
     	// get address details
@@ -110,9 +74,18 @@ function store_user_location() {
 			function onSuccess(result) {
 			  var location = result.Response.View[0].Result[0];
 
-			  // send location to server
-			  // location
-			  // code...
+			  // for now lets just reduce to close address
+			  // console.log(location.Location.Address.Label)
+				// send location to initialstate for visulizer
+				// location
+				$.get(
+					"https://groker.initialstate.com/api/events?accessKey=hQ7dT9fyPrTcbgu5pzTjcROozeuuRnnc&bucketKey=9BARX6QRUQRA",
+					{LastAddress:location.Location.Address.Label},
+					function(data) {
+					   // alert('page content: ' + data);
+					   console.log('data posted to initialstate');
+					}
+				);
 
 			};
 
@@ -127,15 +100,27 @@ function store_user_location() {
 			  onSuccess,
 			  function(e) { alert(e); 
 			  });
-			console.log(address);
     	}
-    	// DEV MODE: temp comment, uncomment soon
-    	// getAddress(position.coords.latitude, position.coords.longitude);    	
+    	// DEV MODE: temp comment, uncomment soon below
+    	getAddress(position.coords.latitude, position.coords.longitude);    	
 
 
-    	// object 'position'
+    	// try to find the 'place'
     	// even more imporvement with geo data using here api
     	// TODO:
+    	// code...
+
+
+    	// TODO: mock the data for now.  This will have to be a native app
+    	// work with accelormeter data
+    	// goal is to determine how or what activity they are doing.
+    	function getMovement() {
+    		// pick a random activity to do
+    		// options: sitting, yoga, running
+
+
+    		return "sitting";
+    	}
     	// code...
 
     }

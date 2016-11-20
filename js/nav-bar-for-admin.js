@@ -21,7 +21,7 @@ $('#side-menu > li:nth-child(-n+8)').hide(); // kill dashboard plus everything e
 
 // $('#side-menu').append('<li><a href="product_recommender.html"><i class="fa fa-dashboard fa-fw"></i>Product Recommender</a></li>'); // product recommender
 
-// TODO: calendar, purchaser
-// $('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Calendar</a></li>'); // calendar
+// TODO: calender, purchaser
+// $('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Calender</a></li>'); // calender
 // $('#side-menu').append('<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Purchaser</a></li>'); // purchaser
 // code...
